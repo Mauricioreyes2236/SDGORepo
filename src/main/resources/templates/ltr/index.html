@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<style>
+	#logo-ecosheys{
+		width:170px;
+		height:50px;
+		}
+	#derecha{
+	float:right; 
+	}
+	  .navbar-nav {
+    width: 100%;
+    text-align: center;
+   
+  }
+  
+    .navbar-nav > li {
+      float: none;
+      display: inline-block;
+    }
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon.png" th:href="@{/images/favicon.png}">
+    <title>SDGOR</title>
+    <!-- Custom CSS -->
+    <link rel="sylesheet" href="static/libs/chartist/dist/chartist.min.css" th:href="@{/libs/chartist/dist/chartist.min.css}">
+    <!-- Custom CSS -->
+    <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <link rel="sylesheet" href="static/dist/css/style.min.css" th:href="@{/dist/css/style.min.css}">
+    <link rel="sylesheet" href="static/css/style.css" th:href="@{/css/style.css}">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin6">
+            <table  id="TableTopNav" style="width: 100%; align=: center; height: 20;">
+	<tr>
+		<td width="40%" align="left"><a th:href="@{/inicio}"><img src="static/images/logo-icon.png" th:src="@{/images/logo-icon.png}" class="dark-logo" id="logo-ecosheys"/></a></td>
+		<td width="60%" align="right">
+			<div class="col-lg-11"><h2> Sistema Administrativo Empresarial </h2></div>
+		</td>
+	</tr>
+</table>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <li>
+                            <!-- User Profile-->
+                            <div class="user-profile d-flex no-block dropdown m-t-20">
+                                <div class="user-pic"><img src="static/images/users/1.jpg" th:src="@{/images/users/1.jpg}" class="rounded-circle"  width="40"/></div>
+                                <div class="user-content hide-menu m-l-10">
+                                    <a href="javascript:void(0)" class="" id="Userdd" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <h5 class="m-b-0 user-name font-medium">administrador<i
+                                                class="fa fa-angle-down"></i></h5>
+                                        <span class="op-5 user-email">operaciones@ecosheys.com.mx</span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Userdd">
+                                        <a class="dropdown-item" href="javascript:void(0)"><i
+                                                class="ti-user m-r-5 m-l-5"></i> Perfil </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="javascript:void(0)"><i
+                                                class="ti-settings m-r-5 m-l-5"></i> Bloquear</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="javascript:void(0)"><i
+                                                class="fa fa-power-off m-r-5 m-l-5"></i> Salir</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End User Profile-->
+                        </li>
+                        <!-- User Profile-->
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                th:href="@{/inicio}" aria-expanded="false"><i class="mdi mdi-monitor"></i><span
+                                    class="hide-menu">Escritorio</span></a></li>
+                                    <li class="sidebar-item">
+					<a class="sidebar-link btn btn-w-m btn-outline btn-default" aria-expended="false" style="background-color: #FCFEFF;"><i class="mdi mdi-clipboard-text pull-left"></i> <span class="nav-label hide-menu"> Administración </span><i class="mdi mdi-chevron-down"></i></a>
+					<ul class="nav nav-second-level collapse" style="background-color: #FCFEFF; color: #000;">
+						<li><a th:href="@{/cliente}" class="sidebar-link"><i class="fa fa-user-plus" aria-hidden="true"></i><span class="nav-label"> Nuevo</span></a></li>
+						<li><a href="searchClient.php" class="sidebar-link"><i class="fa fa-search" aria-hidden="true"></i><span class="nav-label"> Buscar</span></a></li>
+						<!--li><a href="Planeacion.php"><i class="fa fa-calendar" aria-hidden="true"></i><span class="nav-label"> Planeación</span></a></li-->
+						<!--li><a href="searchContrato.php" style="margin-bottom:-10px;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span class="nav-label"> Contrato</span></a></li-->
+						<li><a href="adminFiles.php" class="sidebar-link"><i class="fa fa-file" aria-hidden="true"></i><span class="nav-label"> Archivos</span></a></li>
+						<li><a href="uploadUser.php" style="margin-bottom:-10px;" class="sidebar-link"><i class="fa fa-upload" aria-hidden="true"></i><span class="nav-label"> Subir Excel</span></a></li>
+					</ul>
+				</li>
+                        <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="table-basic.html" aria-expanded="false"><i class="mdi mdi-border-all"></i><span
+                                    class="hide-menu">Table</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="icon-material.html" aria-expanded="false"><i class="mdi mdi-face"></i><span
+                                    class="hide-menu">Icon</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="starter-kit.html" aria-expanded="false"><i class="mdi mdi-file"></i><span
+                                    class="hide-menu">Blank</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="error-404.html" aria-expanded="false"><i class="mdi mdi-alert-outline"></i><span
+                                    class="hide-menu">404</span></a></li>-->
+                    </ul>
+
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row border-bottom" >
+	<nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0; text-align: right;">
+		<div class="navbar-header">
+			<a id="btn-minimalize" class="navbar-minimalize minimalize-styl-2 btn btn-white" href="#">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+			<ul class="nav navbar-top-links navbar-right">
+			<li class="pull-right">
+				<span class="m-r-sm text-muted welcome-message">Ecosheys es una Solución Integral en Seguridad, Higiene Industrial y Medio Ambiente
+				</span>
+			</li>
+			<li class="dropdown d-inline pull-right" id="widget-grid">
+				<a id="enc-num-msgs derecha" class="dropdown-toggle count-info" data-toggle="dropdown" href="#"> <!--  data-widget-refresh="15" data-widget-load="../clases/AlertAjax.php?numAlert=numAlert"-->
+																							
+																	
+					<i class="fa fa-bell"></i>
+					<!--span id="num-msgs" class="label label-primary"></span-->
+				</a>
+				<div class="col-md-5"></div>
+				<ul class="dropdown-menu dropdown-alerts" data-widget-refresh="15" data-widget-load="../clases/AlertAjax.php?contentAlert=contentAlert&sufijo=../&sufijoMenu=">											
+                    					
+					<li class="divider"></li> 
+				</ul>
+			</li>
+			<!--li>
+				<a href="login/logout.php" id="cali">
+					<i class="fa fa-sign-out"></i> Salir
+				</a>
+			</li-->
+			<!-- SIGN OUT -->
+			<li class="xn-icon-button pull-right">
+				<a href="#" class="mb-control" data-box="#mb-signout"><span id="derecha" class="fa fa-sign-out"></span> Salir</a>                        
+			</li> 
+			<!-- END SIGN OUT -->
+		</ul>
+	</nav>
+</div>
+            <!-- ===============================
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb" style="background-color:white;">
+                <div class="row align-items-center">
+                    <div class="col-5">
+                        
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Toluca</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Inicio</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+						<div class="card">
+							<div class="card-header">
+									<h5>Sistema Ecosheys</h5>
+								</div>
+								<div class="card-body">
+								<div class="ibox-content text-center">
+									<h2> Bienvenido operaciones@ecosheys.com.mx</h2>
+
+								</div>
+								</div>
+							</div>
+						</div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+	<script src="static/libs/jquery/dist/jquery.min.js" th:src="@{/libs/jquery/dist/jquery.min.js}"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="static/libs/popper.js/dist/umd/popper.min.js" th:src="@{/libs/popper.js/dist/umd/popper.min.js}"></script>
+    <script src="static/libs/bootstrap/dist/js/bootstrap.min.js" th:src="@{/libs/bootstrap/dist/js/bootstrap.min.js}"></script>
+    <script src="static/dist/js/app-style-switcher.js" th:src="@{/dist/js/app-style-switcher.js}"></script>
+    <!--Wave Effects -->
+    <script src="static/dist/js/waves.js" th:src="@{/dist/js/waves.js}"></script>
+    <!--Menu sidebar -->
+    <script src="static/dist/js/sidebarmenu.js" th:src="@{/dist/js/sidebarmenu.js}"></script>
+    <!--Custom JavaScript -->
+    <script src="static/dist/js/custom.js" th:src="@{/dist/js/custom.js}"></script>
+    <!--This page JavaScript -->
+    <!--chartis chart-->
+    <script src="static/libs/chartist/dist/chartist.min.js" th:src="@{/libs/chartist/dist/chartist.min.js}"></script>
+    <script src="static/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js" th:src="@{/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js}"></script>
+    <script src="static/dist/js/pages/dashboards/dashboard1.js" th:src="@{/dist/js/pages/dashboards/dashboard1.js}"></script>
+</body>
+
+</html>
